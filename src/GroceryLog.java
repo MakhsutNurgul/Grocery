@@ -33,4 +33,17 @@ public class GroceryLog {
 
         return true;
     }
+
+    public int getTotal() {
+        int total = 0;
+
+        int i = 0;
+        while (i < count) {
+            total += items[i].getPrice();
+            i++;
+        }
+
+        return total;
+    }
+
 }
