@@ -46,4 +46,32 @@ public class GroceryLog {
         return total;
     }
 
+    public int getAverage() {
+        if (count == 0) {
+            return 0;
+        }
+
+        return getTotal() / count;
+    }
+
+    public Grocery findMax() {
+        if (count == 0) {
+            return null;
+        }
+
+        Grocery max = items[0];
+
+        int i = 1;
+        while (i < count) {
+            if (items[i].getPrice() > max.getPrice()) {
+                max = items[i];
+            }
+            i++;
+        }
+
+        return max;
+    }
+
+
+
 }
