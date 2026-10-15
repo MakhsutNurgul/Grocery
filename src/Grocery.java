@@ -61,10 +61,20 @@ public class Grocery {
         return (long) price * 1000 / weightGrams > 2000;
     }
 
+
     public void printInfo() {
-        System.out.println(
-                date + " | " + product + " | " +
-                        price + " тг | " + weightGrams + " г"
-        );
+        if (product.equalsIgnoreCase("Су")) {
+            System.out.println(
+                    date + " | " + product + " | " +
+                            price + " тг | " +
+                            (weightGrams / 1000.0) + " л"
+            );
+        } else {
+            System.out.println(
+                    date + " | " + product + " | " +
+                            price + " тг | " + weightGrams + " г"
+            );
+        }
     }
+
 }
