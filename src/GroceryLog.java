@@ -72,7 +72,7 @@ public class GroceryLog {
         return max;
     }
 
-    // Күн бойынша іздеу
+
     public void findByDate(String date) {
         int i = 0;
         boolean found = false;
@@ -90,7 +90,7 @@ public class GroceryLog {
         }
     }
 
-    // Тауар атауы бойынша іздеу
+
     public void findByProduct(String product) {
         int i = 0;
         boolean found = false;
