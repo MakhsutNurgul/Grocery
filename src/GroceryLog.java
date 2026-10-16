@@ -36,8 +36,8 @@ public class GroceryLog {
 
     public int getTotal() {
         int total = 0;
-
         int i = 0;
+
         while (i < count) {
             total += items[i].getPrice();
             i++;
@@ -60,8 +60,8 @@ public class GroceryLog {
         }
 
         Grocery max = items[0];
-
         int i = 1;
+
         while (i < count) {
             if (items[i].getPrice() > max.getPrice()) {
                 max = items[i];
@@ -72,6 +72,39 @@ public class GroceryLog {
         return max;
     }
 
+    // Күн бойынша іздеу
+    public void findByDate(String date) {
+        int i = 0;
+        boolean found = false;
 
+        while (i < count) {
+            if (items[i].getDate().equals(date)) {
+                items[i].printInfo();
+                found = true;
+            }
+            i++;
+        }
 
+        if (!found) {
+            System.out.println("Бұл күнге тиесілі тауар табылмады.");
+        }
+    }
+
+    // Тауар атауы бойынша іздеу
+    public void findByProduct(String product) {
+        int i = 0;
+        boolean found = false;
+
+        while (i < count) {
+            if (items[i].getProduct().equalsIgnoreCase(product.trim())) {
+                items[i].printInfo();
+                found = true;
+            }
+            i++;
+        }
+
+        if (!found) {
+            System.out.println("Мұндай тауар табылмады.");
+        }
+    }
 }
